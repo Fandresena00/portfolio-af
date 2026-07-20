@@ -15,9 +15,9 @@
   --bg: 5 7 12;
   --panel: 13 18 32;
   --surface: 10 14 23;
-  --border: 32 42 66;
-  --border-soft: 21 29 48;
-  --border-strong: 44 58 90;
+  --border: 32 42 66 / 0.72;
+  --border-soft: 21 29 48 / 0.72;
+  --border-strong: 44 58 90 / 0.82;
   --grid-line: 28 39 64;
   --text: 234 240 251;
   --muted: 140 153 184;
@@ -31,9 +31,9 @@
   --bg: 244 246 250;
   --panel: 255 255 255;
   --surface: 255 255 255;
-  --border: 214 220 232;
-  --border-soft: 226 231 240;
-  --border-strong: 196 204 220;
+  --border: 214 220 232 / 0.8;
+  --border-soft: 226 231 240 / 0.88;
+  --border-strong: 196 204 220 / 0.8;
   --grid-line: 222 228 238;
   --text: 13 18 32;
   --muted: 90 101 128;

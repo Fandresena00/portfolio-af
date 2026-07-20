@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { TerminalHeader } from "@/components/terminal-header";
 import { SkillTags } from "@/components/skill-tags";
+import { TerminalHeader } from "@/components/terminal-header";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 interface FrontendDemoProps {
   skills: string[];
@@ -13,7 +13,7 @@ export function FrontendDemo({ skills }: FrontendDemoProps) {
   const [done, setDone] = useState(false);
 
   return (
-    <div className="overflow-hidden rounded-lg border border-[rgb(var(--border))] bg-[rgb(var(--surface))]">
+    <div className="overflow-hidden rounded-lg border border-[rgb(var(--border-soft))] bg-[rgb(var(--surface))]">
       <TerminalHeader label="task-card.tsx" />
       <div className="p-6">
         <p className="mb-4 font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.2em] text-[rgb(var(--muted))]">
@@ -22,11 +22,13 @@ export function FrontendDemo({ skills }: FrontendDemoProps) {
 
         <button
           onClick={() => setDone((d) => !d)}
-          className="flex w-full items-center gap-4 rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--panel))] p-4 text-left transition-colors hover:border-[rgb(var(--blue)/40%)]"
+          className="flex w-full items-center gap-4 rounded-md border border-[rgb(var(--border-soft))] bg-[rgb(var(--panel))] p-4 text-left transition-colors hover:border-[rgb(var(--blue)/24%)]"
         >
           <span
             className={`flex h-6 w-6 shrink-0 items-center justify-center rounded border transition-colors ${
-              done ? "border-[rgb(var(--blue))] bg-[rgb(var(--blue))]" : "border-[rgb(var(--border-strong))]"
+              done
+                ? "border-[rgb(var(--blue))] bg-[rgb(var(--blue))]"
+                : "border-[rgb(var(--border-soft))]"
             }`}
           >
             {done && (
@@ -65,7 +67,9 @@ export function FrontendDemo({ skills }: FrontendDemoProps) {
             initial={false}
             animate={{
               color: done ? "rgb(var(--blue))" : "rgb(var(--amber))",
-              borderColor: done ? "rgb(var(--blue)/0.4)" : "rgb(var(--amber)/0.4)",
+              borderColor: done
+                ? "rgb(var(--blue)/0.24)"
+                : "rgb(var(--amber)/0.24)",
             }}
             className="shrink-0 rounded-full border px-2.5 py-1 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.1em]"
           >

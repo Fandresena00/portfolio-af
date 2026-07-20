@@ -8,7 +8,7 @@ export function SkillTags({ skills }: SkillTagsProps) {
       {skills.map((t) => (
         <span
           key={t}
-          className="rounded border border-[rgb(var(--border))] px-2 py-0.5 font-[family-name:var(--font-mono)] text-[10px] text-[rgb(var(--muted))]"
+          className="rounded border border-[rgb(var(--border-soft))] px-2 py-0.5 font-[family-name:var(--font-mono)] text-[10px] text-[rgb(var(--muted))]"
         >
           {t}
         </span>

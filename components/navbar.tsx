@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { profile } from "@/lib/data/profile";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const links = [
   { href: "#about", label: "Profil" },
@@ -40,7 +39,7 @@ export function Navbar() {
           }
         });
       },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
     );
 
     targets.forEach((t) => observer.observe(t));
@@ -53,11 +52,16 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "border-b border-[rgb(var(--border))] bg-[rgb(var(--bg)/85%)] backdrop-blur-md" : "bg-transparent"
+        scrolled
+          ? "border-b border-[rgb(var(--border-soft))] bg-[rgb(var(--bg)/85%)] backdrop-blur-md"
+          : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="font-[family-name:var(--font-mono)] text-sm tracking-[0.2em] text-[rgb(var(--text))]">
+        <a
+          href="#top"
+          className="font-[family-name:var(--font-mono)] text-sm tracking-[0.2em] text-[rgb(var(--text))]"
+        >
           <span className="text-[rgb(var(--blue))]">AF</span>_DEV.SYS
         </a>
 
@@ -69,7 +73,9 @@ export function Navbar() {
                 <a
                   href={link.href}
                   className={`font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.15em] transition-colors ${
-                    isActive ? "text-[rgb(var(--blue))]" : "text-[rgb(var(--muted))] hover:text-[rgb(var(--text))]"
+                    isActive
+                      ? "text-[rgb(var(--blue))]"
+                      : "text-[rgb(var(--muted))] hover:text-[rgb(var(--text))]"
                   }`}
                 >
                   {link.label}
@@ -88,12 +94,12 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
-         <a
-  href={`mailto:${profile.email}`}
-  className="inline-flex items-center justify-center rounded-md bg-[rgb(var(--blue))] px-4 py-2 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--bg))] hover:bg-[rgb(var(--blue)/90%)]"
->
-  Me contacter
-</a>
+          <a
+            href={`mailto:${profile.email}`}
+            className="inline-flex items-center justify-center rounded-md bg-[rgb(var(--blue))] px-4 py-2 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--bg))] hover:bg-[rgb(var(--blue)/90%)]"
+          >
+            Me contacter
+          </a>
         </div>
 
         <div className="flex items-center gap-3 md:hidden">
@@ -114,7 +120,7 @@ export function Navbar() {
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="border-t border-[rgb(var(--border))] bg-[rgb(var(--bg)/95%)] backdrop-blur-md md:hidden"
+          className="border-t border-[rgb(var(--border-soft))] bg-[rgb(var(--bg)/95%)] backdrop-blur-md md:hidden"
         >
           <ul className="flex flex-col gap-1 px-6 py-4">
             {links.map((link) => (
@@ -123,7 +129,9 @@ export function Navbar() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={`block py-2 font-[family-name:var(--font-mono)] text-sm uppercase tracking-[0.15em] ${
-                    active === link.href ? "text-[rgb(var(--blue))]" : "text-[rgb(var(--muted))] hover:text-[rgb(var(--text))]"
+                    active === link.href
+                      ? "text-[rgb(var(--blue))]"
+                      : "text-[rgb(var(--muted))] hover:text-[rgb(var(--text))]"
                   }`}
                 >
                   {link.label}

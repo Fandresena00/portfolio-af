@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -12,7 +12,12 @@ export function ThemeToggle() {
   useEffect(() => setMounted(true), []);
 
   if (!mounted) {
-    return <span className="h-8 w-8 shrink-0 rounded-md border border-[rgb(var(--border))]" aria-hidden />;
+    return (
+      <span
+        className="h-8 w-8 shrink-0 rounded-md border border-[rgb(var(--border-soft))]"
+        aria-hidden
+      />
+    );
   }
 
   const isDark = theme === "dark";
@@ -21,7 +26,7 @@ export function ThemeToggle() {
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
-      className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--border))] text-[rgb(var(--muted))] transition-colors hover:border-[rgb(var(--blue)/50%)] hover:text-[rgb(var(--blue))]"
+      className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md border border-[rgb(var(--border-soft))] text-[rgb(var(--muted))] transition-colors hover:border-[rgb(var(--blue)/30%)] hover:text-[rgb(var(--blue))]"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

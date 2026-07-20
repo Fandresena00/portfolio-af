@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowDown, MapPin, Radio } from "lucide-react";
 import { HudFrame } from "@/components/hud-frame";
 import { profile } from "@/lib/data/profile";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowDown, MapPin, Radio } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const NAME_WORDS = profile.displayName.split(" ");
 
@@ -21,7 +21,10 @@ export function Hero() {
   let charOrder = 0;
 
   return (
-    <section id="top" className="relative flex min-h-screen items-center overflow-hidden pb-20 pt-28">
+    <section
+      id="top"
+      className="relative flex min-h-screen items-center overflow-hidden pb-20 pt-28"
+    >
       <div className="relative mx-auto w-full max-w-6xl px-6">
         <motion.h1
           aria-label={profile.displayName}
@@ -37,14 +40,20 @@ export function Hero() {
                       key={ci}
                       initial={{ opacity: 0, y: 18 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.15 + order * 0.035, duration: 0.4, ease: "easeOut" }}
+                      transition={{
+                        delay: 0.15 + order * 0.035,
+                        duration: 0.4,
+                        ease: "easeOut",
+                      }}
                       className="inline-block"
                     >
                       {char}
                     </motion.span>
                   );
                 })}
-                {wi < NAME_WORDS.length - 1 ? <span className="inline-block">&nbsp;</span> : null}
+                {wi < NAME_WORDS.length - 1 ? (
+                  <span className="inline-block">&nbsp;</span>
+                ) : null}
               </span>
             ))}
           </span>
@@ -82,7 +91,10 @@ export function Hero() {
         >
           <motion.a
             href="#projects"
-            whileHover={{ y: -2, boxShadow: "0 0 24px -4px rgb(var(--blue)/0.55)" }}
+            whileHover={{
+              y: -2,
+              boxShadow: "0 0 24px -4px rgb(var(--blue)/0.55)",
+            }}
             whileTap={{ y: 0, scale: 0.98 }}
             className="rounded-md bg-[rgb(var(--blue))] px-6 py-3 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--bg))]"
           >
@@ -90,9 +102,13 @@ export function Hero() {
           </motion.a>
           <motion.a
             href={`mailto:${profile.email}`}
-            whileHover={{ y: -2, borderColor: "rgb(var(--blue)/0.6)", color: "rgb(var(--blue))" }}
+            whileHover={{
+              y: -2,
+              borderColor: "rgb(var(--blue)/0.35)",
+              color: "rgb(var(--blue))",
+            }}
             whileTap={{ y: 0, scale: 0.98 }}
-            className="rounded-md border border-[rgb(var(--border))] px-6 py-3 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--text))]"
+            className="rounded-md border border-[rgb(var(--border-soft))] px-6 py-3 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--text))]"
           >
             Me contacter
           </motion.a>
@@ -118,8 +134,8 @@ export function Hero() {
               Missions
             </p>
             <p className="mt-2 flex items-center gap-1.5 text-sm text-[rgb(var(--text))]">
-              <Radio size={14} className="text-[rgb(var(--blue))]" />
-              3 projets livrés
+              <Radio size={14} className="text-[rgb(var(--blue))]" />3 projets
+              livrés
             </p>
           </HudFrame>
           <HudFrame className="col-span-2 p-4 sm:col-span-1">
@@ -138,7 +154,10 @@ export function Hero() {
         aria-label="Défiler vers la section suivante"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[rgb(var(--muted))] transition-colors hover:text-[rgb(var(--blue))]"
       >
-        <ArrowDown size={18} className="animate-bounce motion-reduce:animate-none" />
+        <ArrowDown
+          size={18}
+          className="animate-bounce motion-reduce:animate-none"
+        />
       </a>
     </section>
   );

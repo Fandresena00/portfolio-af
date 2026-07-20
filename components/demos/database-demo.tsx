@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { TerminalHeader } from "@/components/terminal-header";
 import { SkillTags } from "@/components/skill-tags";
+import { TerminalHeader } from "@/components/terminal-header";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const QUERY = `prisma.project.findMany({\n  where: { status: "active" }\n})`;
 
@@ -38,7 +38,7 @@ export function DatabaseDemo({ skills }: DatabaseDemoProps) {
   }, [run]);
 
   return (
-    <div className="overflow-hidden rounded-lg border border-[rgb(var(--border))] bg-[rgb(var(--surface))]">
+    <div className="overflow-hidden rounded-lg border border-[rgb(var(--border-soft))] bg-[rgb(var(--surface))]">
       <TerminalHeader label="query.prisma" />
       <div className="p-6">
         <pre className="min-h-[56px] whitespace-pre-wrap font-[family-name:var(--font-mono)] text-[12px] leading-relaxed text-[rgb(var(--blue))]">
@@ -46,7 +46,7 @@ export function DatabaseDemo({ skills }: DatabaseDemoProps) {
           <span className="animate-pulse">▍</span>
         </pre>
 
-        <div className="mt-4 overflow-hidden rounded-md border border-[rgb(var(--border))]">
+        <div className="mt-4 overflow-hidden rounded-md border border-[rgb(var(--border-soft))]">
           <div className="grid grid-cols-2 bg-[rgb(var(--panel))] px-3 py-2 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.1em] text-[rgb(var(--muted))]">
             <span>Projet</span>
             <span>Statut</span>
@@ -57,10 +57,12 @@ export function DatabaseDemo({ skills }: DatabaseDemoProps) {
               initial={{ opacity: 0, x: -8 }}
               animate={showRows ? { opacity: 1, x: 0 } : { opacity: 0, x: -8 }}
               transition={{ duration: 0.3, delay: i * 0.12 }}
-              className="grid grid-cols-2 border-t border-[rgb(var(--border))] px-3 py-2 text-sm text-[rgb(var(--text))]"
+              className="grid grid-cols-2 border-t border-[rgb(var(--border-soft))] px-3 py-2 text-sm text-[rgb(var(--text))]"
             >
               <span>{row.name}</span>
-              <span className="font-[family-name:var(--font-mono)] text-[11px] text-[rgb(var(--muted))]">{row.status}</span>
+              <span className="font-[family-name:var(--font-mono)] text-[11px] text-[rgb(var(--muted))]">
+                {row.status}
+              </span>
             </motion.div>
           ))}
         </div>
@@ -68,7 +70,7 @@ export function DatabaseDemo({ skills }: DatabaseDemoProps) {
         <div className="mt-4 flex items-center justify-between">
           <button
             onClick={() => setRun((r) => r + 1)}
-            className="rounded-md border border-[rgb(var(--border))] px-4 py-2 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--text))] transition-colors hover:border-[rgb(var(--blue)/50%)] hover:text-[rgb(var(--blue))]"
+            className="rounded-md border border-[rgb(var(--border-soft))] px-4 py-2 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--text))] transition-colors hover:border-[rgb(var(--blue)/30%)] hover:text-[rgb(var(--blue))]"
           >
             Exécuter
           </button>

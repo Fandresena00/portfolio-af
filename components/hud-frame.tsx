@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
 
 interface HudFrameProps {
   children: ReactNode;
@@ -12,13 +12,13 @@ interface HudFrameProps {
  * hero stats, panels and project cards to unify the "game console" identity.
  */
 export function HudFrame({ children, className }: HudFrameProps) {
-  const corner = "absolute h-3 w-3 border-[rgb(var(--blue)/70%)]";
+  const corner = "absolute h-3 w-3 border-[rgb(var(--blue)/40%)]";
   return (
     <div className={cn("relative", className)}>
-      <span className={cn(corner, "top-0 left-0 border-l-2 border-t-2")} />
-      <span className={cn(corner, "top-0 right-0 border-r-2 border-t-2")} />
-      <span className={cn(corner, "bottom-0 left-0 border-b-2 border-l-2")} />
-      <span className={cn(corner, "bottom-0 right-0 border-b-2 border-r-2")} />
+      <span className={cn(corner, "top-0 left-0 border-l border-t")} />
+      <span className={cn(corner, "top-0 right-0 border-r border-t")} />
+      <span className={cn(corner, "bottom-0 left-0 border-b border-l")} />
+      <span className={cn(corner, "bottom-0 right-0 border-b border-r")} />
       {children}
     </div>
   );
