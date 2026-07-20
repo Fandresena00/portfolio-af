@@ -1,0 +1,44 @@
+/*
+  Theme tokens for the HUD/console design system.
+  Values are RGB triplets so Tailwind arbitrary classes can apply opacity:
+    bg-[rgb(var(--blue)/40%)]   text-[rgb(var(--text))]   etc.
+
+  Dark = the original "mission console" look (default).
+  Light = a deliberate "blueprint schematic" palette — ink-navy text on
+  cool off-white, with a deeper accent for contrast — not a naive
+  inversion of the dark palette (a saturated blue has weak contrast on
+  white at full brightness, so light mode deepens it).
+*/
+
+:root,
+.dark {
+  --bg: 5 7 12;
+  --panel: 13 18 32;
+  --surface: 10 14 23;
+  --border: 32 42 66;
+  --border-soft: 21 29 48;
+  --border-strong: 44 58 90;
+  --grid-line: 28 39 64;
+  --text: 234 240 251;
+  --muted: 140 153 184;
+  --muted-2: 183 193 217;
+  --blue: 46 111 255;
+  --violet: 139 124 246;
+  --amber: 255 180 84;
+}
+
+.light {
+  --bg: 244 246 250;
+  --panel: 255 255 255;
+  --surface: 255 255 255;
+  --border: 214 220 232;
+  --border-soft: 226 231 240;
+  --border-strong: 196 204 220;
+  --grid-line: 222 228 238;
+  --text: 13 18 32;
+  --muted: 90 101 128;
+  --muted-2: 60 70 95;
+  --blue: 29 78 216;
+  --violet: 109 90 205;
+  --amber: 180 95 6;
+}
