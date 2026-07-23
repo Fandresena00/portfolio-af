@@ -1,4 +1,4 @@
-export type ProjectStatus = "En production" | "En développement" | "Terminé";
+export type ProjectStatus = "In production" | "In development" | "Completed";
 
 export interface ProjectImage {
   src: string;
@@ -25,27 +25,26 @@ export interface Project {
   links: ProjectLink[];
 }
 
-// Remplacez les chemins d'images ci-dessous par vos propres captures d'écran,
-// placées dans /public/projects/<id>/... (format recommandé : 1600x1000, .png ou .jpg)
+// Screenshots live in /public/projects/<id>/... (recommended: 1600x1000, .png or .jpg)
 export const projects: Project[] = [
   {
     id: "prosendia",
     codename: "OP-01",
     title: "Prosendia",
     period: "2025 — 2026",
-    status: "En production",
+    status: "In production",
     summary:
-      "Plateforme SaaS qui automatise, grâce à l'IA, la gestion des messages, commentaires et interactions clients sur les réseaux sociaux.",
+      "A SaaS platform that uses AI to automate the management of messages, comments and customer interactions on social media.",
     description:
-      "Prosendia centralise les échanges d'une entreprise sur les réseaux sociaux et laisse l'intelligence artificielle prendre en charge une partie des réponses. J'ai conçu et développé la plateforme de bout en bout : interface, API, base de données, intégrations et mise en production.",
+      "Prosendia centralizes a company's social media conversations and lets AI handle part of the replies. I designed and built the platform end to end: interface, API, database, integrations and production deployment.",
     highlights: [
-      "Conception d'une interface web moderne, responsive et performante",
-      "API REST sécurisées avec authentification et gestion des utilisateurs",
-      "Automatisation des réponses aux messages via l'IA",
-      "Intégration des API Facebook/Meta pour la gestion des interactions clients",
-      "Tableau de bord avec statistiques, abonnements et suivi de l'activité",
-      "Intégration des paiements et gestion des abonnements",
-      "Déploiement et maintenance en production, avec optimisation performance et sécurité",
+      "Designed a modern, responsive and performant web interface",
+      "Secure REST APIs with authentication and user management",
+      "Automated message replies via AI",
+      "Integrated the Facebook/Meta APIs for customer interaction management",
+      "Dashboard with statistics, subscriptions and activity tracking",
+      "Integrated payment solutions and subscription management",
+      "Deployed and maintained the app in production, optimizing performance and security",
     ],
     stack: [
       "Next.js",
@@ -60,12 +59,25 @@ export const projects: Project[] = [
       "OpenRouter",
     ],
     images: [
-      { src: "/projects/prosendia/capture1.png", alt: "Tableau de bord Prosendia" },
-      { src: "/projects/prosendia/capture2.png", alt: "Messagerie automatisée par IA" },
-      { src: "/projects/prosendia/capture3.png", alt: "Gestion des abonnements" },
+      {
+        src: "/projects/prosendia/capture1.png",
+        alt: "Prosendia dashboard",
+      },
+      {
+        src: "/projects/prosendia/capture2.png",
+        alt: "AI-automated messaging",
+      },
+      {
+        src: "/projects/prosendia/capture3.png",
+        alt: "Subscription management",
+      },
     ],
     links: [
-      { label: "prosendia.genforus.com", url: "https://prosendia.genforus.com", type: "live" },
+      {
+        label: "prosendia.genforus.com",
+        url: "https://prosendia.genforus.com",
+        type: "live",
+      },
     ],
   },
   {
@@ -73,43 +85,60 @@ export const projects: Project[] = [
     codename: "OP-02",
     title: "Nexus",
     period: "2025 — 2026",
-    status: "En développement",
+    status: "In development",
     summary:
-      "Application collaborative de gestion de projets et de tâches, avec espaces de travail et rôles.",
+      "A collaborative project and task management app with workspaces and roles.",
     description:
-      "Nexus permet à une équipe d'organiser ses espaces de travail, projets, tâches et membres, avec un suivi précis des statuts et des priorités.",
+      "Nexus lets a team organize its workspaces, projects, tasks and members, with precise status and priority tracking.",
     highlights: [
-      "Gestion des espaces de travail, projets, tâches et membres",
-      "Création, modification et suivi des tâches avec statuts et priorités",
-      "Authentification sécurisée et gestion des rôles utilisateurs",
-      "Interface moderne, responsive et optimisée pour une utilisation fluide",
-      "API REST et gestion des données avec PostgreSQL",
+      "Workspace, project, task and member management",
+      "Task creation, editing and tracking with statuses and priorities",
+      "Secure authentication and user role management",
+      "Modern, responsive interface built for smooth day-to-day use",
+      "REST API and data handling with PostgreSQL",
     ],
-    stack: ["Next.js", "React", "Prisma", "PostgreSQL", "Better-Auth", "Tailwind CSS", "shadcn/ui"],
+    stack: [
+      "Next.js",
+      "React",
+      "Prisma",
+      "PostgreSQL",
+      "Better-Auth",
+      "Tailwind CSS",
+      "shadcn/ui",
+    ],
     images: [
-      { src: "/projects/nexus/capture1.png", alt: "Tableau de tâches Nexus" },
-      { src: "/projects/nexus/capture2.png", alt: "Espace de travail Nexus" },
+      { src: "/projects/nexus/capture1.png", alt: "Nexus task board" },
+      { src: "/projects/nexus/capture2.png", alt: "Nexus workspace" },
     ],
     links: [
-      { label: "nexus.fadevt.org", url: "https://nexus.fadevt.org", type: "live" },
-      { label: "Code source", url: "https://github.com/Fandresena00/nexus", type: "github" },
+      {
+        label: "nexus.fadevt.org",
+        url: "https://nexus.fadevt.org",
+        type: "live",
+      },
+      {
+        label: "Source code",
+        url: "https://github.com/Fandresena00/nexus",
+        type: "github",
+      },
     ],
   },
   {
     id: "mh-store",
     codename: "OP-03",
     title: "MH Store",
-    period: "Depuis 2026",
-    status: "En production",
-    summary: "Boutique e-commerce headless basée sur Shopify, avec une interface Next.js sur-mesure.",
+    period: "Since 2026",
+    status: "In production",
+    summary:
+      "A headless e-commerce store built on Shopify, with a custom Next.js front end.",
     description:
-      "MH Store découple le front-end Next.js du back-office Shopify pour offrir une expérience d'achat rapide et personnalisée, tout en gardant la gestion des produits côté Shopify.",
+      "MH Store decouples the Next.js front end from the Shopify back office to deliver a fast, tailored shopping experience while keeping product management on Shopify's side.",
     highlights: [
-      "Interface utilisateur moderne et responsive avec Next.js",
-      "API sécurisées développées avec NestJS",
-      "Intégration des API Shopify (Storefront et Admin GraphQL)",
-      "Gestion des produits, collections, commandes et clients",
-      "Optimisation des performances, du SEO et de l'expérience utilisateur",
+      "Modern, responsive interface built with Next.js",
+      "Secure APIs built with NestJS",
+      "Integrated the Shopify APIs (Storefront and Admin GraphQL)",
+      "Product, collection, order and customer management",
+      "Optimized performance, SEO and user experience",
     ],
     stack: [
       "Next.js",
@@ -124,12 +153,20 @@ export const projects: Project[] = [
       "Shopify GraphQL Admin API",
     ],
     images: [
-      { src: "/projects/mh-store/capture1.png", alt: "Page d'accueil MH Store" },
-      { src: "/projects/mh-store/capture2.png", alt: "Fiche produit MH Store" },
-      { src: "/projects/mh-store/capture3.png", alt: "Panier MH Store" },     { src: "/projects/mh-store/capture4.png", alt: "Panier MH Store" },
+      {
+        src: "/projects/mh-store/capture1.png",
+        alt: "MH Store home page",
+      },
+      { src: "/projects/mh-store/capture2.png", alt: "MH Store product page" },
+      { src: "/projects/mh-store/capture3.png", alt: "MH Store cart" },
+      { src: "/projects/mh-store/capture4.png", alt: "MH Store checkout" },
     ],
     links: [
-      { label: "mh-store-omega.vercel.app", url: "https://mh-store-omega.vercel.app", type: "live" },
+      {
+        label: "mh-store-omega.vercel.app",
+        url: "https://mh-store-omega.vercel.app",
+        type: "live",
+      },
     ],
   },
 ];

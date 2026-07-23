@@ -15,23 +15,20 @@ const channels = [
     icon: Mail,
   },
   {
-    label: "Téléphone",
+    label: "Phone",
     value: profile.phone,
     href: `tel:${profile.phone.replace(/\s/g, "")}`,
     icon: Phone,
   },
   {
-    label: "Site",
-    value: profile.website.replace("https://", "fandresena.fadevt.org"),
+    label: "Website",
+    value: profile.website.replace("https://", ""),
     href: profile.website,
     icon: Globe,
   },
   {
     label: "GitHub",
-    value: profile.github.replace(
-      "https://",
-      "https://github.com/Fandresena00/portfolio-af",
-    ),
+    value: profile.github.replace("https://", ""),
     href: profile.github,
     icon: FaGithub,
   },
@@ -47,8 +44,8 @@ export function ContactSection() {
         <SectionHeading
           index="05"
           eyebrow="Contact"
-          title="Lançons une mission ensemble"
-          description="Ouvert aux opportunités freelance ou en équipe, à distance comme sur Antananarivo."
+          title="Let's start a mission together"
+          description="Open to freelance or full-time opportunities, remote or based in Antananarivo."
         />
 
         <motion.div
@@ -57,7 +54,7 @@ export function ContactSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <HudFrame className="rounded-lg border border-[rgb(var(--border-soft))] bg-[rgb(var(--panel)/60%)] p-8">
+          <HudFrame className="rounded-lg border border-[rgb(var(--border))] bg-[rgb(var(--panel)/60%)] p-8">
             <div className="grid gap-6 sm:grid-cols-2">
               {channels.map(({ label, value, href, icon: Icon }) => (
                 <a
@@ -65,13 +62,13 @@ export function ContactSection() {
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel={href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group flex items-center gap-4 rounded-md border border-[rgb(var(--border-soft))] p-4 transition-colors hover:border-[rgb(var(--blue)/30%)]"
+                  className="group flex items-center gap-4 rounded-md border border-[rgb(var(--border))] p-4 transition-colors hover:border-[rgb(var(--blue)/50%)]"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-[rgb(var(--border-soft))] text-[rgb(var(--blue))] transition-colors group-hover:border-[rgb(var(--blue)/30%)]">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-[rgb(var(--border))] text-[rgb(var(--blue))] transition-colors group-hover:border-[rgb(var(--blue)/50%)]">
                     <Icon size={16} />
                   </span>
                   <span>
-                    <span className="block font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.2em] text-[rgb(var(--muted))]">
+                    <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-[rgb(var(--muted))]">
                       {label}
                     </span>
                     <span className="block text-sm text-[rgb(var(--text))]">

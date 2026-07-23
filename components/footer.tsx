@@ -8,7 +8,7 @@ export function Footer() {
           © {new Date().getFullYear()} {profile.fullName}
         </p>
         <p className="font-[family-name:var(--font-mono)] text-xs tracking-[0.1em] text-[rgb(var(--muted))]">
-          Construit avec Next.js · Tailwind CSS · shadcn/ui
+          Built with Next.js · Tailwind CSS · shadcn/ui
         </p>
       </div>
     </footer>

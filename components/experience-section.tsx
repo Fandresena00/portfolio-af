@@ -1,24 +1,17 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import { HudFrame } from "@/components/hud-frame";
 import { SectionHeading } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { experiences } from "@/lib/data/experience";
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
 
 export function ExperienceSection() {
   return (
-    <section
-      id="experience"
-      className="relative border-t border-[rgb(var(--border-soft))] py-24"
-    >
+    <section id="experience" className="relative border-t border-[rgb(var(--border-soft))] py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading
-          index="03"
-          eyebrow="Parcours"
-          title="Expérience professionnelle"
-        />
+        <SectionHeading index="03" eyebrow="Experience" title="Work experience" />
 
         <div className="space-y-10">
           {experiences.map((exp, i) => (
@@ -32,7 +25,7 @@ export function ExperienceSection() {
             >
               <span className="absolute left-0 top-1.5 h-2.5 w-2.5 rounded-full bg-[rgb(var(--blue))] shadow-[0_0_0_4px_rgb(var(--blue)/0.15)]" />
 
-              <HudFrame className="rounded-lg border border-[rgb(var(--border-soft))] bg-[rgb(var(--panel)/60%)] p-6">
+              <HudFrame className="rounded-lg border border-[rgb(var(--border))] bg-[rgb(var(--panel)/60%)] p-6">
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold text-[rgb(var(--text))]">
@@ -53,9 +46,7 @@ export function ExperienceSection() {
                   </span>
                 </div>
 
-                <p className="mt-3 text-sm text-[rgb(var(--muted-2))]">
-                  {exp.summary}
-                </p>
+                <p className="mt-3 text-sm text-[rgb(var(--muted-2))]">{exp.summary}</p>
 
                 <ul className="mt-4 space-y-2">
                   {exp.achievements.map((a) => (
@@ -74,7 +65,7 @@ export function ExperienceSection() {
                     <Badge
                       key={tech}
                       variant="outline"
-                      className="border-[rgb(var(--border-soft))] bg-transparent font-normal text-[rgb(var(--muted-2))]"
+                      className="border-[rgb(var(--border))] bg-transparent font-normal text-[rgb(var(--muted-2))]"
                     >
                       {tech}
                     </Badge>

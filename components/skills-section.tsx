@@ -9,12 +9,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { skillCategories } from "@/lib/data/skills";
 import { motion } from "framer-motion";
 import type { ComponentType } from "react";
+import { IntegrationsDemo } from "./demos/integrations-demo";
 
 const demoComponents: Record<string, ComponentType<{ skills: string[] }>> = {
   frontend: FrontendDemo,
   backend: BackendDemo,
   database: DatabaseDemo,
   tools: ToolsDemo,
+  integrations: IntegrationsDemo,
 };
 
 export function SkillsSection() {
@@ -27,8 +29,8 @@ export function SkillsSection() {
         <SectionHeading
           index="02"
           eyebrow="Stats"
-          title="Compétences techniques"
-          description="Plutôt qu'une jauge de pourcentage, une démo interactive par domaine — cliquez pour voir le comportement en action."
+          title="Technical skills"
+          description="Instead of a percentage gauge, an interactive demo for each domain — click to see the behavior in action."
         />
 
         <Tabs defaultValue={skillCategories[0].id}>
@@ -37,7 +39,7 @@ export function SkillsSection() {
               <TabsTrigger
                 key={cat.id}
                 value={cat.id}
-                className="border border-[rgb(var(--border-soft))] bg-[rgb(var(--panel)/60%)] font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--muted))] data-[state=active]:border-[rgb(var(--blue)/30%)] data-[state=active]:bg-[rgb(var(--panel))] data-[state=active]:text-[rgb(var(--blue))] data-[state=active]:shadow-none"
+                className="border border-[rgb(var(--border))] bg-[rgb(var(--panel)/60%)] font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--muted))] data-[state=active]:border-[rgb(var(--blue)/50%)] data-[state=active]:bg-[rgb(var(--panel))] data-[state=active]:text-[rgb(var(--blue))] data-[state=active]:shadow-none"
               >
                 [{cat.code}] {cat.label}
               </TabsTrigger>

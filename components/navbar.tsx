@@ -1,16 +1,17 @@
 "use client";
 
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
 import { profile } from "@/lib/data/profile";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#about", label: "Profil" },
+  { href: "#about", label: "Profile" },
   { href: "#skills", label: "Stats" },
-  { href: "#experience", label: "Parcours" },
-  { href: "#projects", label: "Projets" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -53,7 +54,7 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled
-          ? "border-b border-[rgb(var(--border-soft))] bg-[rgb(var(--bg)/85%)] backdrop-blur-md"
+          ? "border-b border-[rgb(var(--border))] bg-[rgb(var(--bg)/85%)] backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -94,18 +95,21 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
-          <a
-            href={`mailto:${profile.email}`}
-            className="inline-flex items-center justify-center rounded-md bg-[rgb(var(--blue))] px-4 py-2 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--bg))] hover:bg-[rgb(var(--blue)/90%)]"
+          <Button
+            type="button"
+            onClick={() => {
+              window.location.href = `mailto:${profile.email}`;
+            }}
+            className="bg-[rgb(var(--blue))] font-mono text-xs uppercase tracking-widest text-[rgb(var(--bg))] hover:bg-[rgb(var(--blue)/90%)]"
           >
-            Me contacter
-          </a>
+            Get in touch
+          </Button>
         </div>
 
         <div className="flex items-center gap-3 md:hidden">
           <ThemeToggle />
           <button
-            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
             className="text-[rgb(var(--text))]"
           >
@@ -120,7 +124,7 @@ export function Navbar() {
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="border-t border-[rgb(var(--border-soft))] bg-[rgb(var(--bg)/95%)] backdrop-blur-md md:hidden"
+          className="border-t border-[rgb(var(--border))] bg-[rgb(var(--bg)/95%)] backdrop-blur-md md:hidden"
         >
           <ul className="flex flex-col gap-1 px-6 py-4">
             {links.map((link) => (
@@ -143,7 +147,7 @@ export function Navbar() {
                 href={`mailto:${profile.email}`}
                 className="inline-block w-full rounded-md bg-[rgb(var(--blue))] px-4 py-2 text-center font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--bg))]"
               >
-                Me contacter
+                Get in touch
               </a>
             </li>
           </ul>

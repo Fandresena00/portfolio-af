@@ -12,22 +12,22 @@ export interface ExperienceEntry {
 export const experiences: ExperienceEntry[] = [
   {
     id: "prosendia",
-    role: "Développeur Full-Stack",
+    role: "Full-Stack Developer",
     company: "Prosendia",
     companyUrl: "https://prosendia.genforus.com",
     period: "2025 — 2026",
     summary:
-      "Plateforme SaaS utilisant l'intelligence artificielle pour automatiser la gestion des messages, commentaires et interactions clients sur les réseaux sociaux.",
+      "A SaaS platform using AI to automate the management of messages, comments and customer interactions on social media.",
     achievements: [
-      "Conception et développement d'une plateforme SaaS d'automatisation basée sur l'IA",
-      "Développement d'une interface web moderne, responsive et performante",
-      "Conception et développement d'API REST sécurisées, avec authentification et gestion des utilisateurs",
-      "Intégration de l'IA pour automatiser les réponses aux messages et commentaires des entreprises",
-      "Intégration avec les API Facebook/Meta pour la gestion des interactions clients",
-      "Conception et gestion de la base de données PostgreSQL avec Prisma ORM",
-      "Développement d'un tableau de bord avec statistiques, abonnements et suivi de l'activité",
-      "Intégration des solutions de paiement et gestion des abonnements associée",
-      "Déploiement et maintenance en production, avec optimisation des performances et de la sécurité",
+      "Designed and built an AI-powered automation SaaS platform",
+      "Built a modern, responsive and performant web interface",
+      "Designed and built secure REST APIs with authentication and user management",
+      "Integrated AI to automate replies to customer messages and comments",
+      "Integrated Facebook/Meta APIs for customer interaction management",
+      "Designed and managed the PostgreSQL database with Prisma ORM",
+      "Built a dashboard with statistics, subscriptions and activity tracking",
+      "Integrated payment solutions and subscription management",
+      "Deployed and maintained the app in production, optimizing performance and security",
     ],
     stack: [
       "Next.js",

@@ -27,18 +27,18 @@ interface ProjectDialogProps {
 export function ProjectDialog({ project, onOpenChange }: ProjectDialogProps) {
   return (
     <Dialog open={!!project} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl border-[rgb(var(--border-soft))] bg-[rgb(var(--surface))] text-[rgb(var(--text))] sm:max-w-3xl">
+      <DialogContent className="max-w-3xl border-[rgb(var(--border))] bg-[rgb(var(--surface))] text-[rgb(var(--text))] sm:max-w-3xl">
         {project && (
           <div className="space-y-5">
             <DialogHeader>
-              <div className="flex items-center gap-2 font-[family-name:var(--font-mono)] text-xs tracking-[0.2em] text-[rgb(var(--blue))]">
+              <div className="flex items-center gap-2 font-mono text-xs tracking-[0.2em] text-[rgb(var(--blue))]">
                 <span>{project.codename}</span>
                 <span className="text-[rgb(var(--muted))]">/</span>
                 <span className="text-[rgb(var(--muted))]">
                   {project.period}
                 </span>
               </div>
-              <DialogTitle className="font-[family-name:var(--font-display)] text-2xl text-[rgb(var(--text))]">
+              <DialogTitle className="font-(family-name:--font-display) text-2xl text-[rgb(var(--text))]">
                 {project.title}
               </DialogTitle>
             </DialogHeader>
@@ -47,7 +47,7 @@ export function ProjectDialog({ project, onOpenChange }: ProjectDialogProps) {
               <CarouselContent>
                 {project.images.map((img) => (
                   <CarouselItem key={img.src}>
-                    <div className="relative aspect-video overflow-hidden rounded-md border border-[rgb(var(--border-soft))] bg-[rgb(var(--surface))]">
+                    <div className="relative aspect-video overflow-hidden rounded-md border border-[rgb(var(--border))] bg-[rgb(var(--surface))]">
                       <Image
                         src={img.src}
                         alt={img.alt}
@@ -59,8 +59,8 @@ export function ProjectDialog({ project, onOpenChange }: ProjectDialogProps) {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-2 border-[rgb(var(--border-soft))] bg-[rgb(var(--surface))] text-[rgb(var(--text))]" />
-              <CarouselNext className="right-2 border-[rgb(var(--border-soft))] bg-[rgb(var(--surface))] text-[rgb(var(--text))]" />
+              <CarouselPrevious className="left-2 border-[rgb(var(--border))] bg-[rgb(var(--surface))] text-[rgb(var(--text))]" />
+              <CarouselNext className="right-2 border-[rgb(var(--border))] bg-[rgb(var(--surface))] text-[rgb(var(--text))]" />
             </Carousel>
 
             <p className="text-sm leading-relaxed text-[rgb(var(--muted-2))]">
@@ -71,7 +71,7 @@ export function ProjectDialog({ project, onOpenChange }: ProjectDialogProps) {
               {project.highlights.map((h) => (
                 <li
                   key={h}
-                  className="flex gap-2 font-[family-name:var(--font-mono)] text-[13px] leading-relaxed text-[rgb(var(--muted))]"
+                  className="flex gap-2 font-mono text-[13px] leading-relaxed text-[rgb(var(--muted))]"
                 >
                   <span className="text-[rgb(var(--blue))]">{">"}</span>
                   {h}
@@ -84,7 +84,7 @@ export function ProjectDialog({ project, onOpenChange }: ProjectDialogProps) {
                 <Badge
                   key={tech}
                   variant="outline"
-                  className="border-[rgb(var(--border-soft))] bg-transparent font-normal text-[rgb(var(--muted-2))]"
+                  className="border-[rgb(var(--border))] bg-transparent font-normal text-[rgb(var(--muted-2))]"
                 >
                   {tech}
                 </Badge>
@@ -98,7 +98,7 @@ export function ProjectDialog({ project, onOpenChange }: ProjectDialogProps) {
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md border border-[rgb(var(--border-soft))] px-4 py-2 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.1em] text-[rgb(var(--text))] transition-colors hover:border-[rgb(var(--blue)/30%)] hover:text-[rgb(var(--blue))]"
+                  className="inline-flex items-center gap-2 rounded-md border border-[rgb(var(--border))] px-4 py-2 font-mono text-xs uppercase tracking-widest text-[rgb(var(--text))] transition-colors hover:border-[rgb(var(--blue)/60%)] hover:text-[rgb(var(--blue))]"
                 >
                   {link.type === "github" ? (
                     <FaGithub size={14} />
